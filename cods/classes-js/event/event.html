@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family:
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          Oxygen,
+          Ubuntu,
+          Cantarell,
+          "Open Sans",
+          "Helvetica Neue",
+          sans-serif;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 20px;
+      }
+      #grandparent {
+        background-color: lightcoral;
+        padding: 20px;
+        width: 50%;
+        margin: 20px;
+      }
+      #parent {
+        background-color: lightblue;
+
+        padding: 20px;
+        margin: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+      }
+      #child {
+        background-color: lightgreen;
+        padding: 20px;
+        margin: 20px;
+        cursor: pointer;
+      }
+      .text {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+      div {
+        border-radius: 12px;
+        /* box-shadow: 2px 2px 10px hsla(0, 0%, 0%, 0.2); */
+      }
+      #container {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 20px;
+        height: 100vh;
+        width: 100vw;
+      }
+      #events {
+        /* background-color: lightgray; */
+        box-shadow: dimgray 2px 2px 10px;
+        width: 50%;
+        height: 50%;
+        margin: 20px;
+        box-shadow: 10px 10px 87px 0px rgba(0, 0, 0, 0.75);
+        -webkit-box-shadow: 10px 10px 87px 0px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 10px 10px 87px 0px rgba(0, 0, 0, 0.75);
+        overflow-y: scroll;
+      }
+      .texts-in {
+        padding: 10px;
+        font-size: 1.2rem;
+        font-weight: bold;
+      }
+      p{
+        font-size: 1.2rem;
+        font-weight: normal;
+        margin:10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Event Flow Playground</h1>
+    <p>Demonstrating Capturuing, Bubbling & Propogation Control</p>
+    <div id="container">
+      <div id="grandparent">
+        <div class="text">Grandparent</div>
+        <div id="parent">
+          <div class="text">Parent</div>
+          <div id="child">
+            <div class="text">Click Me</div>
+          </div>
+        </div>
+      </div>
+      <div id="events">
+        <div class="texts-in">Event Log</div>
+      </div>
+    </div>
+    <script src="event.js"></script>
+  </body>
+</html>
